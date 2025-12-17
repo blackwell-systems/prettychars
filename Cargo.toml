@@ -1,0 +1,16 @@
+[package]
+name = "prettychars"
+version = "0.1.0"
+edition = "2021"
+authors = ["Dayna Blackwell"]
+description = "Unicode text styling and named glyph lookup with zero runtime overhead"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/blackwell-systems/prettychars"
+keywords = ["unicode", "text", "styling", "glyphs", "typography"]
+categories = ["text-processing", "encoding"]
+rust-version = "1.70"
+
+[dependencies]
+phf = { version = "0.11", features = ["macros"] }
+
+[dev-dependencies]
