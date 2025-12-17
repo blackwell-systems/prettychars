@@ -7,73 +7,73 @@
 pub enum Style {
     /// Mathematical bold (𝐀𝐁𝐂𝐚𝐛𝐜𝟎𝟏𝟐)
     MathBold,
-    
+
     /// Mathematical italic (𝐴𝐵𝐶𝑎𝑏𝑐)
     Italic,
-    
+
     /// Mathematical bold italic (𝑨𝑩𝑪𝒂𝒃𝒄)
     BoldItalic,
-    
+
     /// Fullwidth forms (ＡＢＣａｂｃ０１２)
     Fullwidth,
-    
+
     /// Small capitals (ᴀʙᴄ)
     SmallCaps,
-    
+
     /// Circled Latin letters (ⒶⒷⒸⒶⒷⒸ)
     Circled,
-    
+
     /// Negative circled (🅐🅑🅒🅐🅑🅒)
     CircledNegative,
-    
+
     /// Squared Latin letters (🄰🄱🄲)
     Squared,
-    
+
     /// Negative squared (🅰🅱🅲)
     SquaredNegative,
-    
+
     /// Fraktur / Gothic (𝔄𝔅𝔆𝔞𝔟𝔠)
     Fraktur,
-    
+
     /// Bold Fraktur (𝕬𝕭𝕮𝖆𝖇𝖈)
     FrakturBold,
-    
+
     /// Script / Calligraphic (𝒜𝐵𝒞𝒶𝒷𝒸)
     Script,
-    
+
     /// Bold script (𝓐𝓑𝓒𝓪𝓫𝓬)
     ScriptBold,
-    
+
     /// Double-struck / Blackboard bold (𝔸𝔹ℂ𝕒𝕓𝕔𝟘𝟙𝟚)
     DoubleStruck,
-    
+
     /// Monospace (𝙰𝙱𝙲𝚊𝚋𝚌𝟶𝟷𝟸)
     Monospace,
-    
+
     /// Sans-serif (𝖠𝖡𝖢𝖺𝖻𝖼𝟢𝟣𝟤)
     SansSerif,
-    
+
     /// Sans-serif bold (𝗔𝗕𝗖𝗮𝗯𝗰𝟬𝟭𝟮)
     SansSerifBold,
-    
+
     /// Sans-serif italic (𝘈𝘉𝘊𝘢𝘣𝘤)
     SansSerifItalic,
-    
+
     /// Sans-serif bold italic (𝘼𝘽𝘾𝙖𝙗𝙘)
     SansSerifBoldItalic,
-    
+
     /// Parenthesized Latin letters (⒜⒝⒞)
     Parenthesized,
-    
+
     /// Superscript (ᴬᴮᶜ⁰¹²)
     Superscript,
-    
+
     /// Subscript (ₐₑₒ₀₁₂)
     Subscript,
-    
+
     /// Strikethrough using combining character (A̶B̶C̶)
     Strikethrough,
-    
+
     /// Inverted/flipped text (ɐqɔ)
     Inverted,
 }
@@ -99,9 +99,7 @@ pub enum Style {
 /// assert_eq!(style("Hi 👋", Style::MathBold), "𝐇𝐢 👋");
 /// ```
 pub fn style(text: &str, style: Style) -> String {
-    text.chars()
-        .map(|c| convert_char(c, style))
-        .collect()
+    text.chars().map(|c| convert_char(c, style)).collect()
 }
 
 /// List all available style variants

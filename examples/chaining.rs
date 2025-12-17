@@ -32,7 +32,8 @@ fn main() {
     println!("=== Chaining Examples ===\n");
 
     // Method 1: Direct chaining with string building
-    let title = format!("{} {} {} {}", 
+    let title = format!(
+        "{} {} {} {}",
         glyph("star").unwrap(),
         style("PRETTYCHARS", Style::MathBold),
         style("DEMO", Style::Circled),
@@ -55,17 +56,17 @@ fn main() {
     // Method 3: Status indicators
     let services = [
         ("nginx", true),
-        ("redis", true), 
+        ("redis", true),
         ("postgres", false),
         ("mongodb", true),
     ];
 
     println!("Services:");
     for (service, running) in services {
-        let status_icon = if running { 
-            glyph("check.heavy").unwrap() 
-        } else { 
-            glyph("check.x.heavy").unwrap() 
+        let status_icon = if running {
+            glyph("check.heavy").unwrap()
+        } else {
+            glyph("check.x.heavy").unwrap()
         };
         let service_name = style(service, Style::Monospace);
         println!("  {} {}", status_icon, service_name);
@@ -97,14 +98,16 @@ fn main() {
         };
         let styled_metric = style(metric, Style::SansSerifBold);
         let styled_value = style(value, Style::Monospace);
-        println!("  {} {:<8} {:<8} {}", 
-            icon, styled_metric, styled_value, status);
+        println!(
+            "  {} {:<8} {:<8} {}",
+            icon, styled_metric, styled_value, status
+        );
     }
     println!();
 
     // Method 6: Complex dashboard element
     let dashboard_header = format!(
-        "{}{}{} {} {}{}{}", 
+        "{}{}{} {} {}{}{}",
         glyph("box.heavy.tl").unwrap(),
         glyph("box.heavy.h").unwrap().repeat(20),
         glyph("box.heavy.tr").unwrap(),
@@ -118,12 +121,18 @@ fn main() {
     // Method 7: Function chaining helper
     fn build_alert(level: &str, message: &str) -> String {
         let (icon, styled_level) = match level {
-            "error" => (glyph("check.x.heavy").unwrap(), style("ERROR", Style::MathBold)),
-            "warn" => (glyph("misc.warning").unwrap(), style("WARN", Style::Squared)),
+            "error" => (
+                glyph("check.x.heavy").unwrap(),
+                style("ERROR", Style::MathBold),
+            ),
+            "warn" => (
+                glyph("misc.warning").unwrap(),
+                style("WARN", Style::Squared),
+            ),
             "info" => (glyph("check.mark").unwrap(), style("INFO", Style::Circled)),
             _ => ("?", level.to_string()),
         };
-        
+
         format!("{} {} {}", icon, styled_level, message)
     }
 

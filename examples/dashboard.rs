@@ -43,61 +43,82 @@ fn draw_dashboard() {
 
     // Title
     println!("\n");
-    draw_line(&tl, &h, &tr, 60);
+    draw_line(tl, h, tr, 60);
     println!("{} {:^58} {}", v, "System Dashboard", v);
-    draw_separator(&t_right, &h, &cross, &t_left, 60);
+    draw_separator(t_right, h, cross, t_left, 60);
 
     // CPU Usage
     println!("{} CPU Usage:  {:>3}%  {}", v, 73, v);
     print!("{} ", v);
     draw_progress_bar(73, 50, &blocks);
     println!(" {}", v);
-    
+
     // Memory
     println!("{} Memory:     {:>3}%  {}", v, 45, v);
     print!("{} ", v);
     draw_progress_bar(45, 50, &blocks);
     println!(" {}", v);
-    
+
     // Disk
     println!("{} Disk:       {:>3}%  {}", v, 89, v);
     print!("{} ", v);
     draw_progress_bar(89, 50, &blocks);
     println!(" {}", v);
 
-    draw_separator(&t_right, &h, &cross, &t_left, 60);
+    draw_separator(t_right, h, cross, t_left, 60);
 
     // Services status
-    println!("{} Services:                                                {}", v, v);
-    println!("{} {} nginx        {} apache      {} postgresql            {}", v, check, check, cross_mark, v);
-    println!("{} {} redis        {} mongodb     {} mysql                 {}", v, check, cross_mark, check, v);
+    println!(
+        "{} Services:                                                {}",
+        v, v
+    );
+    println!(
+        "{} {} nginx        {} apache      {} postgresql            {}",
+        v, check, check, cross_mark, v
+    );
+    println!(
+        "{} {} redis        {} mongodb     {} mysql                 {}",
+        v, check, cross_mark, check, v
+    );
 
-    draw_separator(&t_right, &h, &cross, &t_left, 60);
+    draw_separator(t_right, h, cross, t_left, 60);
 
     // Metrics with sparklines
-    println!("{} Network Traffic:                                         {}", v, v);
+    println!(
+        "{} Network Traffic:                                         {}",
+        v, v
+    );
     print!("{} {} Upload:   ", v, arrow_up);
     draw_sparkline(&[3, 5, 4, 6, 8, 7, 9, 10, 8, 11, 9, 12], &blocks);
     println!("  2.3 MB/s  {}", v);
-    
+
     print!("{} {} Download: ", v, arrow_down);
     draw_sparkline(&[8, 9, 7, 10, 12, 11, 15, 14, 13, 16, 15, 18], &blocks);
     println!("  8.7 MB/s  {}", v);
 
-    draw_separator(&t_right, &h, &cross, &t_left, 60);
+    draw_separator(t_right, h, cross, t_left, 60);
 
     // Alerts
-    println!("{} Alerts:                                                  {}", v, v);
-    println!("{} {} High CPU usage detected                              {}", v, warning, v);
-    println!("{} {} Disk space running low                               {}", v, warning, v);
+    println!(
+        "{} Alerts:                                                  {}",
+        v, v
+    );
+    println!(
+        "{} {} High CPU usage detected                              {}",
+        v, warning, v
+    );
+    println!(
+        "{} {} Disk space running low                               {}",
+        v, warning, v
+    );
 
-    draw_line(&bl, &h, &br, 60);
+    draw_line(bl, h, br, 60);
     println!();
 }
 
 fn draw_line(left: &str, middle: &str, right: &str, width: usize) {
     print!("{}", left);
-    for _ in 0..width-2 {
+    for _ in 0..width - 2 {
         print!("{}", middle);
     }
     println!("{}", right);
@@ -105,7 +126,7 @@ fn draw_line(left: &str, middle: &str, right: &str, width: usize) {
 
 fn draw_separator(left: &str, middle: &str, cross: &str, right: &str, width: usize) {
     print!("{}", left);
-    for i in 0..width-2 {
+    for i in 0..width - 2 {
         if i > 0 && i % 20 == 0 {
             print!("{}", cross);
         } else {

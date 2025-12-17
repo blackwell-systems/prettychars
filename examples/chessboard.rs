@@ -1,7 +1,7 @@
 use prettychars::glyph;
 
 // Example: Renders a complete 8x8 chess board with pieces in starting position,
-// using double-line box drawing for the grid and Unicode shade characters 
+// using double-line box drawing for the grid and Unicode shade characters
 // for the checkerboard pattern. Run with: cargo run --example chessboard
 
 fn main() {
@@ -44,7 +44,7 @@ fn draw_chessboard() {
 
     // Initial board position
     let mut board = vec![vec![None; 8]; 8];
-    
+
     // Setup black pieces (row 0 and 1)
     board[0] = vec![
         Some(b_rook),
@@ -91,22 +91,22 @@ fn draw_chessboard() {
     // Draw each row
     for (row_idx, row) in board.iter().enumerate() {
         print!("{} {}", 8 - row_idx, v);
-        
+
         for (col_idx, piece) in row.iter().enumerate() {
             // Determine square color (checkerboard pattern)
             let is_light = (row_idx + col_idx) % 2 == 0;
             let bg = if is_light { light_square } else { dark_square };
-            
+
             // Print piece or background
             if let Some(p) = piece {
                 print!("{}{}{}", bg, p, bg);
             } else {
                 print!("{}{}{}", bg, bg, bg);
             }
-            
+
             print!("{}", v);
         }
-        
+
         println!(" {}", 8 - row_idx);
 
         // Draw horizontal divider (except after last row)
@@ -134,8 +134,12 @@ fn draw_chessboard() {
 
     // Legend
     println!("Legend:");
-    println!("  White: {} {} {} {} {} {}", 
-        w_king, w_queen, w_rook, w_bishop, w_knight, w_pawn);
-    println!("  Black: {} {} {} {} {} {}", 
-        b_king, b_queen, b_rook, b_bishop, b_knight, b_pawn);
+    println!(
+        "  White: {} {} {} {} {} {}",
+        w_king, w_queen, w_rook, w_bishop, w_knight, w_pawn
+    );
+    println!(
+        "  Black: {} {} {} {} {} {}",
+        b_king, b_queen, b_rook, b_bishop, b_knight, b_pawn
+    );
 }
