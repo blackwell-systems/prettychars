@@ -56,13 +56,13 @@ fn draw_chessboard() {
         Some(b_knight),
         Some(b_rook),
     ];
-    for col in 0..8 {
-        board[1][col] = Some(b_pawn);
+    for item in &mut board[1] {
+        *item = Some(b_pawn);
     }
 
     // Setup white pieces (row 6 and 7)
-    for col in 0..8 {
-        board[6][col] = Some(w_pawn);
+    for item in &mut board[6] {
+        *item = Some(w_pawn);
     }
     board[7] = vec![
         Some(w_rook),
