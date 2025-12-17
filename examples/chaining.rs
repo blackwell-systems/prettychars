@@ -1,5 +1,33 @@
 use prettychars::{glyph, style, Style};
 
+/* Expected Output:
+=== Chaining Examples ===
+
+Title: ★ 𝐏𝐑𝐄𝐓𝐓𝐘𝐂𝐇𝐀𝐑𝐒 ⒹⒺⓂⓄ ★
+
+Progress: → Progress: [███████▌     ] 75% ✓
+
+Services:
+  ✔ 𝚗𝚐𝚒𝚗𝚡
+  ✔ 𝚛𝚎𝚍𝚒𝚜
+  ✘ 𝚙𝚘𝚜𝚝𝚐𝚛𝚎𝚜
+  ✔ 𝚖𝚘𝚗𝚐𝚘𝚍𝚋
+
+Mixed: Welcome to 𝐑𝐮𝐬𝐭 ²⁰²⁴! ⚡ 𝒣𝒶𝓅𝓅𝓎 𝒸𝓄𝒹𝒾𝓃𝒼!
+
+System Status:
+  ⚠ 𝗖𝗣𝗨      𝟽𝟹%      High
+  ✓ 𝗠𝗲𝗺𝗼𝗿𝘆   𝟺𝟻%      OK
+  ⚠ 𝗗𝗶𝘀𝗸     𝟾𝟿%      Warning
+
+Dashboard: ┏━━━━━━━━━━━━━━━━━━━━┓ ᴅᴀꜱʜʙᴏᴀʀᴅ ┏━━━━━━━━━━━━━━━━━━━━┓
+
+Alerts:
+  ✘ 𝐄𝐑𝐑𝐎𝐑 Database connection failed
+  ⚠ 🅆🄰🅁🄽 High memory usage detected
+  ✓ ⒾⓃⒻⓄ System backup completed
+*/
+
 fn main() {
     println!("=== Chaining Examples ===\n");
 
