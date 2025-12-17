@@ -255,17 +255,69 @@ fn draw_table() {
 
 ### Chess Board
 
-The `examples/chessboard.rs` example demonstrates advanced terminal rendering with:
-- Double-line box drawing (╔═╗╠╬╣╚═╝)
+The `examples/chessboard.rs` example demonstrates advanced terminal rendering:
+
+```text
+    a  b  c  d  e  f  g  h
+  ╔═══╦═══╦═══╦═══╦═══╦═══╦═══╦═══╗
+8 ║░♜░║▒♞▒║░♝░║▒♛▒║░♚░║▒♝▒║░♞░║▒♜▒║ 8
+  ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
+7 ║▒♟▒║░♟░║▒♟▒║░♟░║▒♟▒║░♟░║▒♟▒║░♟░║ 7
+  ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
+6 ║░░░║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║ 6
+  ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
+5 ║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║░░░║ 5
+  ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
+4 ║░░░║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║ 4
+  ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
+3 ║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║░░░║ 3
+  ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
+2 ║░♙░║▒♙▒║░♙░║▒♙▒║░♙░║▒♙▒║░♙░║▒♙▒║ 2
+  ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
+1 ║▒♖▒║░♘░║▒♗▒║░♕░║▒♔▒║░♗░║▒♘▒║░♖░║ 1
+  ╚═══╩═══╩═══╩═══╩═══╩═══╩═══╩═══╝
+    a  b  c  d  e  f  g  h
+```
+
+Features:
+- Double-line box drawing with proper intersections
 - Checkerboard pattern using Unicode shade blocks (░▒)
-- All 12 chess pieces (♔♕♖♗♘♙ and ♚♛♜♝♞♟)
-- Standard starting position with algebraic notation
+- All 12 chess pieces in starting position
+- Algebraic notation labels
 
 Run with: `cargo run --example chessboard`
 
-![Chessboard Example](https://via.placeholder.com/600x400/1a1a1a/ffffff?text=See+examples%2Fchessboard.rs)
+### System Dashboard
 
-*Note: GitHub's font rendering doesn't preserve Unicode box-drawing alignment. Run the example locally to see the full rendered board.*
+The `examples/dashboard.rs` example shows a complete monitoring interface:
+
+```text
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                      System Dashboard                      ┃
+┣━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━┫
+┃ CPU Usage:   73%  ┃
+┃ [████████████████████████████████████▄             ] ┃
+┃ Memory:      45%  ┃
+┃ [██████████████████████▄                           ] ┃
+┃ Services:                                                ┃
+┃ ✔ nginx        ✔ apache      ✘ postgresql            ┃
+┃ Network Traffic:                                         ┃
+┃ ↑ Upload:   ▂▃▃▄▅▅▆▆▅▇▆█  2.3 MB/s  ┃
+┃ ↓ Download: ▄▄▃▄▅▅▆▆▆▇▆█  8.7 MB/s  ┃
+┃ Alerts:                                                  ┃
+┃ ⚠ High CPU usage detected                              ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+```
+
+Features:
+- Gradient progress bars with 8-level block characters
+- Service status indicators with checkmarks and crosses
+- Sparkline charts for real-time metrics
+- Professional box-drawing layout
+
+Run with: `cargo run --example dashboard`
+
+**Note**: Some terminals may display question marks due to Unicode variation selector handling. See [TERMINAL_COMPATIBILITY.md](TERMINAL_COMPATIBILITY.md) for workarounds.
 
 ## License
 
