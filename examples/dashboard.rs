@@ -1,29 +1,8 @@
 use prettychars::glyph;
 
-/* Expected Output:
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃                      System Dashboard                      ┃
-┣━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━┫
-┃ CPU Usage:   73%  ┃
-┃ [████████████████████████████████████▄             ] ┃
-┃ Memory:      45%  ┃
-┃ [██████████████████████▄                           ] ┃
-┃ Disk:        89%  ┃
-┃ [████████████████████████████████████████████▄     ] ┃
-┣━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━┫
-┃ Services:                                                ┃
-┃ ✔ nginx        ✔ apache      ✘ postgresql            ┃
-┃ ✔ redis        ✘ mongodb     ✔ mysql                 ┃
-┣━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━┫
-┃ Network Traffic:                                         ┃
-┃ ↑ Upload:   ▂▃▃▄▅▅▆▆▅▇▆█  2.3 MB/s  ┃
-┃ ↓ Download: ▄▄▃▄▅▅▆▆▆▇▆█  8.7 MB/s  ┃
-┣━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━┫
-┃ Alerts:                                                  ┃
-┃ ⚠ High CPU usage detected                              ┃
-┃ ⚠ Disk space running low                               ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-*/
+// Example: Creates a system monitoring dashboard with progress bars, service
+// status indicators, sparkline charts, and alerts using heavy box drawing
+// and gradient block characters. Run with: cargo run --example dashboard
 
 fn main() {
     draw_dashboard();
