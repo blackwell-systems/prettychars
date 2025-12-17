@@ -253,71 +253,31 @@ fn draw_table() {
 }
 ```
 
-### Chess Board
+### Terminal Examples
 
-The `examples/chessboard.rs` example demonstrates advanced terminal rendering:
+Run these examples to see prettychars in action:
 
-```text
-    a  b  c  d  e  f  g  h
-  ╔═══╦═══╦═══╦═══╦═══╦═══╦═══╦═══╗
-8 ║░♜░║▒♞▒║░♝░║▒♛▒║░♚░║▒♝▒║░♞░║▒♜▒║ 8
-  ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
-7 ║▒♟▒║░♟░║▒♟▒║░♟░║▒♟▒║░♟░║▒♟▒║░♟░║ 7
-  ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
-6 ║░░░║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║ 6
-  ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
-5 ║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║░░░║ 5
-  ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
-4 ║░░░║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║ 4
-  ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
-3 ║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║░░░║ 3
-  ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
-2 ║░♙░║▒♙▒║░♙░║▒♙▒║░♙░║▒♙▒║░♙░║▒♙▒║ 2
-  ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
-1 ║▒♖▒║░♘░║▒♗▒║░♕░║▒♔▒║░♗░║▒♘▒║░♖░║ 1
-  ╚═══╩═══╩═══╩═══╩═══╩═══╩═══╩═══╝
-    a  b  c  d  e  f  g  h
-```
+**Chess Board** (`cargo run --example chessboard`)
+- Renders a complete 8x8 chess board with pieces in starting position
+- Uses double-line box drawing (╔═══╗) for the grid structure
+- Shows checkerboard pattern with Unicode shade characters
+- Displays all 12 chess pieces: ♔♕♖♗♘♙ (white) and ♚♛♜♝♞♟ (black)
+- Includes algebraic notation (a-h columns, 1-8 rows)
 
-Features:
-- Double-line box drawing with proper intersections
-- Checkerboard pattern using Unicode shade blocks (░▒)
-- All 12 chess pieces in starting position
-- Algebraic notation labels
+**System Dashboard** (`cargo run --example dashboard`)
+- Creates a monitoring interface with multiple sections
+- Progress bars using 8-level gradient blocks (▁▂▃▄▅▆▇█)
+- Service status indicators with checkmarks (✔) and crosses (✘)
+- Sparkline charts for network traffic visualization
+- Warning alerts with appropriate symbols (⚠)
+- Professional layout using heavy box drawing characters
 
-Run with: `cargo run --example chessboard`
+Both examples demonstrate:
+- Zero runtime overhead through PHF lookups
+- Rich terminal UIs using only Unicode characters
+- Proper alignment and spacing in terminal environments
 
-### System Dashboard
-
-The `examples/dashboard.rs` example shows a complete monitoring interface:
-
-```text
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃                      System Dashboard                      ┃
-┣━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━┫
-┃ CPU Usage:   73%  ┃
-┃ [████████████████████████████████████▄             ] ┃
-┃ Memory:      45%  ┃
-┃ [██████████████████████▄                           ] ┃
-┃ Services:                                                ┃
-┃ ✔ nginx        ✔ apache      ✘ postgresql            ┃
-┃ Network Traffic:                                         ┃
-┃ ↑ Upload:   ▂▃▃▄▅▅▆▆▅▇▆█  2.3 MB/s  ┃
-┃ ↓ Download: ▄▄▃▄▅▅▆▆▆▇▆█  8.7 MB/s  ┃
-┃ Alerts:                                                  ┃
-┃ ⚠ High CPU usage detected                              ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-```
-
-Features:
-- Gradient progress bars with 8-level block characters
-- Service status indicators with checkmarks and crosses
-- Sparkline charts for real-time metrics
-- Professional box-drawing layout
-
-Run with: `cargo run --example dashboard`
-
-**Note**: Some terminals may display question marks due to Unicode variation selector handling. See [TERMINAL_COMPATIBILITY.md](TERMINAL_COMPATIBILITY.md) for workarounds.
+**Note**: GitHub's markdown renderer cannot properly display Unicode box-drawing alignment. The examples render perfectly in actual terminals. See [TERMINAL_COMPATIBILITY.md](TERMINAL_COMPATIBILITY.md) for terminal-specific guidance.
 
 ## License
 
