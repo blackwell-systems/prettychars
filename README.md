@@ -253,6 +253,24 @@ fn draw_table() {
 }
 ```
 
+### Chess Board
+
+See `examples/chessboard.rs` for a complete working example that renders:
+
+```
+    a  b  c  d  e  f  g  h
+  ╔═══╦═══╦═══╦═══╦═══╦═══╦═══╦═══╗
+8 ║░♜░║▒♞▒║░♝░║▒♛▒║░♚░║▒♝▒║░♞░║▒♜▒║ 8
+  ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
+7 ║▒♟▒║░♟░║▒♟▒║░♟░║▒♟▒║░♟░║▒♟▒║░♟░║ 7
+  ...
+1 ║▒♖▒║░♘░║▒♗▒║░♕░║▒♔▒║░♗░║▒♘▒║░♖░║ 1
+  ╚═══╩═══╩═══╩═══╩═══╩═══╩═══╩═══╝
+    a  b  c  d  e  f  g  h
+```
+
+Run with: `cargo run --example chessboard`
+
 ## License
 
 Licensed under either of:
