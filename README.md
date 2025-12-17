@@ -255,31 +255,35 @@ fn draw_table() {
 
 ### Chess Board
 
-See `examples/chessboard.rs` for a complete working example that renders:
+See `examples/chessboard.rs` for a complete working example that renders a full chessboard with:
+- Double-line box drawing for the grid
+- Checkerboard pattern using light/medium shade blocks
+- All chess pieces in starting position
+- Algebraic notation labels
 
-```
-    a   b   c   d   e   f   g   h
+Run with: `cargo run --example chessboard`
+
+<pre>
+    a  b  c  d  e  f  g  h
   ╔═══╦═══╦═══╦═══╦═══╦═══╦═══╦═══╗
-8 ║ ♜ ║ ♞ ║ ♝ ║ ♛ ║ ♚ ║ ♝ ║ ♞ ║ ♜ ║ 8
+8 ║░♜░║▒♞▒║░♝░║▒♛▒║░♚░║▒♝▒║░♞░║▒♜▒║ 8
   ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
-7 ║ ♟ ║ ♟ ║ ♟ ║ ♟ ║ ♟ ║ ♟ ║ ♟ ║ ♟ ║ 7
+7 ║▒♟▒║░♟░║▒♟▒║░♟░║▒♟▒║░♟░║▒♟▒║░♟░║ 7
   ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
-6 ║   ║   ║   ║   ║   ║   ║   ║   ║ 6
+6 ║░░░║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║ 6
   ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
-5 ║   ║   ║   ║   ║   ║   ║   ║   ║ 5
+5 ║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║░░░║ 5
   ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
-4 ║   ║   ║   ║   ║   ║   ║   ║   ║ 4
+4 ║░░░║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║ 4
   ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
-3 ║   ║   ║   ║   ║   ║   ║   ║   ║ 3
+3 ║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║░░░║ 3
   ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
-2 ║ ♙ ║ ♙ ║ ♙ ║ ♙ ║ ♙ ║ ♙ ║ ♙ ║ ♙ ║ 2
+2 ║░♙░║▒♙▒║░♙░║▒♙▒║░♙░║▒♙▒║░♙░║▒♙▒║ 2
   ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
-1 ║ ♖ ║ ♘ ║ ♗ ║ ♕ ║ ♔ ║ ♗ ║ ♘ ║ ♖ ║ 1
+1 ║▒♖▒║░♘░║▒♗▒║░♕░║▒♔▒║░♗░║▒♘▒║░♖░║ 1
   ╚═══╩═══╩═══╩═══╩═══╩═══╩═══╩═══╝
-    a   b   c   d   e   f   g   h
-```
-
-The actual example includes checkerboard shading. Run with: `cargo run --example chessboard`
+    a  b  c  d  e  f  g  h
+</pre>
 
 ## License
 
