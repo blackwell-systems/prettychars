@@ -255,35 +255,17 @@ fn draw_table() {
 
 ### Chess Board
 
-See `examples/chessboard.rs` for a complete working example that renders a full chessboard with:
-- Double-line box drawing for the grid
-- Checkerboard pattern using light/medium shade blocks
-- All chess pieces in starting position
-- Algebraic notation labels
+The `examples/chessboard.rs` example demonstrates advanced terminal rendering with:
+- Double-line box drawing (╔═╗╠╬╣╚═╝)
+- Checkerboard pattern using Unicode shade blocks (░▒)
+- All 12 chess pieces (♔♕♖♗♘♙ and ♚♛♜♝♞♟)
+- Standard starting position with algebraic notation
 
 Run with: `cargo run --example chessboard`
 
-<pre>
-    a  b  c  d  e  f  g  h
-  ╔═══╦═══╦═══╦═══╦═══╦═══╦═══╦═══╗
-8 ║░♜░║▒♞▒║░♝░║▒♛▒║░♚░║▒♝▒║░♞░║▒♜▒║ 8
-  ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
-7 ║▒♟▒║░♟░║▒♟▒║░♟░║▒♟▒║░♟░║▒♟▒║░♟░║ 7
-  ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
-6 ║░░░║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║ 6
-  ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
-5 ║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║░░░║ 5
-  ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
-4 ║░░░║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║ 4
-  ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
-3 ║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║░░░║▒▒▒║░░░║ 3
-  ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
-2 ║░♙░║▒♙▒║░♙░║▒♙▒║░♙░║▒♙▒║░♙░║▒♙▒║ 2
-  ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
-1 ║▒♖▒║░♘░║▒♗▒║░♕░║▒♔▒║░♗░║▒♘▒║░♖░║ 1
-  ╚═══╩═══╩═══╩═══╩═══╩═══╩═══╩═══╝
-    a  b  c  d  e  f  g  h
-</pre>
+![Chessboard Example](https://via.placeholder.com/600x400/1a1a1a/ffffff?text=See+examples%2Fchessboard.rs)
+
+*Note: GitHub's font rendering doesn't preserve Unicode box-drawing alignment. Run the example locally to see the full rendered board.*
 
 ## License
 
