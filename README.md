@@ -89,6 +89,39 @@ for style in style_names() {
 }
 ```
 
+### Chaining Operations
+
+Combine multiple prettychars operations for rich terminal interfaces:
+
+```rust
+use prettychars::{glyph, style, Style};
+
+// Progress bars with mixed elements
+let progress = format!(
+    "{} [{}{}] {}% {}", 
+    glyph("arrow.right").unwrap(),
+    glyph("block.full").unwrap().repeat(7),
+    glyph("block.left.4").unwrap(),
+    75,
+    glyph("check.mark").unwrap()
+);
+
+// Status indicators with styled text
+let status = format!("{} {}", 
+    glyph("misc.warning").unwrap(),
+    style("HIGH CPU", Style::MathBold)
+);
+
+// Complex UI elements
+let title = format!("{} {} {}", 
+    glyph("star").unwrap(),
+    style("DASHBOARD", Style::SmallCaps),
+    glyph("star").unwrap()
+);
+```
+
+See `examples/chaining.rs` for complete patterns.
+
 ## Available Styles
 
 ### Mathematical
